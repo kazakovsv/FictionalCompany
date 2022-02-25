@@ -1,0 +1,40 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="FictionalCompany.Desktop.Views.CustomerView">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="_nameTextBox" Grid.Column="1" Grid.Row="0"
+                 Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="_surnameTextBox" Grid.Column="1" Grid.Row="1"
+                 Text="{Binding Path=Surname, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="_emailTextBox" Grid.Column="1" Grid.Row="2"
+                 Text="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="_salesTextBox" Grid.Column="1" Grid.Row="3"
+                 Text="{Binding Path=Sales, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="_Name" Grid.Column="0" Grid.Row="0"
+               Target="{Binding ElementName=_nameTextBox}"/>
+        <Label Content="S_urame" Grid.Column="0" Grid.Row="1"
+               Target="{Binding ElementName=_surnameTextBox}"/>
+        <Label Content="_Email" Grid.Column="0" Grid.Row="2"
+               Target="{Binding ElementName=_emailTextBox}"/>
+        <Label Content="S_ales" Grid.Column="0" Grid.Row="3"
+               Target="{Binding ElementName=_salesTextBox}"/>
+
+        <Button Content="_Save" Grid.Column="1" Grid.Row="4"
+                Command="{Binding SaveCommand}"
+                HorizontalAlignment="Right"/>
+    </Grid>
+</UserControl>
